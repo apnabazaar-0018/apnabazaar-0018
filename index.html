@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apna Bazaar | Apne Shehar Ki Dukaan</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApnaBazaar – Local Shops. Same Day Delivery.</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="navbar">
-    <div class="logo">Apna Bazaar</div>
-    <nav>
-      <a href="#how">How It Works</a>
-      <a href="#shopkeepers">Shopkeepers</a>
-      <a href="#customers">Customers</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Apne Shehar Ki Dukaan</h1>
-      <p>
-        Apna Bazaar connects local shopkeepers with nearby customers.
-        Buy local. Support local. Grow together.
-      </p>
-      <a href="#" class="btn">Join Apna Bazaar</a>
+<!-- HEADER -->
+<header class="header">
+  <div class="brand">
+    <img src="logo.png" class="logo">
+    <div class="brand-text">
+      <div class="brand-name">ApnaBazaar</div>
+      <div class="tagline">LOCAL • FAST • TRUSTED</div>
     </div>
+  </div>
 
-    <div class="hero-image">
-      <img src="images/hero.png" alt="Local shopping illustration">
-    </div>
-  </section>
+  <nav>
+    <a href="#how">How It Works</a>
+    <a href="#shops">Shops</a>
+    <a href="#contact">Join Us</a>
+  </nav>
+</header>
 
-  <!-- How It Works -->
-  <section class="how-it-works" id="how">
-    <h2>How Apna Bazaar Works</h2>
-    <div class="steps">
-      <div class="step">
-        <h3>📍 Find Nearby Shops</h3>
-        <p>Discover trusted local shops around you.</p>
-      </div>
-      <div class="step">
-        <h3>🛒 Place Your Order</h3>
-        <p>Order directly from your neighborhood dukaan.</p>
-      </div>
-      <div class="step">
-        <h3>🚚 Fast Local Delivery</h3>
-        <p>Get products delivered quickly or pick them up.</p>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Your City. Your Shops. Delivered Today.</h1>
+  <p>ApnaBazaar connects local shops with customers for transparent and same-day delivery.</p>
+</section>
 
-  <!-- For Shopkeepers -->
-  <section class="audience" id="shopkeepers">
-    <h2>For Shopkeepers</h2>
-    <p>
-      Take your dukaan online, reach nearby customers,
-      and grow your business without heavy commissions.
-    </p>
-  </section>
+<!-- PINCODE -->
+<section class="pincode-section">
+  <div class="pincode-box">
+    <input type="text" id="pincodeInput" placeholder="Enter your pincode">
+    <button onclick="checkPincode()">Check Availability</button>
+  </div>
+  <div id="pincodeResult"></div>
+</section>
 
-  <!-- For Customers -->
-  <section class="audience light" id="customers">
-    <h2>For Customers</h2>
-    <p>
-      Support local businesses, get fresh products,
-      and enjoy faster deliveries from nearby shops.
-    </p>
-  </section>
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <h2>How ApnaBazaar Works</h2>
+  <div class="steps">
+    <div>📍 Enter Your Location</div>
+    <div>🏪 Browse Local Shops</div>
+    <div>⚡ Get Same Day Delivery</div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 Apna Bazaar. Built for local communities.</p>
-  </footer>
+<!-- SHOPS -->
+<section class="shops" id="shops">
+  <h2>Explore Local Shops</h2>
+  <div class="shop-grid" id="shopGrid"></div>
+</section>
 
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Join ApnaBazaar</h2>
+  <p>Are you a local seller? Expand your business online.</p>
+  <a class="cta" href="https://wa.me/919325854165">Become a Seller</a>
+</section>
+
+<footer class="site-footer">
+  © 2026 ApnaBazaar – Empowering Local Commerce
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-
