@@ -285,3 +285,106 @@ border-radius:50%;
 box-shadow:0 10px 30px rgba(0,0,0,0.25);
 z-index:1000;
 }
+/* DASHBOARD GRAPHICS */
+
+.dashboard-visual{
+display:flex;
+gap:20px;
+justify-content:center;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.dash-card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:20px 30px;
+border-radius:12px;
+color:white;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* PARTNERS */
+
+.partners{
+padding:80px;
+text-align:center;
+background:white;
+}
+
+.partner-logos{
+display:flex;
+justify-content:center;
+gap:50px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.partner-logos img{
+height:40px;
+opacity:0.8;
+transition:0.3s;
+}
+
+.partner-logos img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+padding:100px;
+background:#f4f7fb;
+text-align:center;
+}
+
+.testimonial{
+display:none;
+max-width:600px;
+margin:auto;
+font-size:18px;
+}
+
+.testimonial.active{
+display:block;
+}
+
+/* DARK MODE */
+
+.dark-mode{
+background:#0b1f3a;
+color:white;
+}
+
+.dark-mode header{
+background:#08162b;
+}
+
+.dark-mode .card{
+background:#16284d;
+color:white;
+}
+
+/* MICRO ANIMATIONS */
+
+section{
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
