@@ -500,6 +500,57 @@ transform:translateX(-50%);
 }
 
 }
+/* ELIGIBILITY CHECKER */
+
+.eligibility{
+padding:100px 20px;
+text-align:center;
+background:#f7f9ff;
+}
+
+.eligibility input{
+display:block;
+margin:12px auto;
+padding:14px;
+width:260px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.eligibility button{
+padding:14px 28px;
+background:#2f6fed;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* EMI CALCULATOR */
+
+.calculator{
+padding:100px 20px;
+text-align:center;
+background:#eef3ff;
+}
+
+.calculator input{
+display:block;
+margin:12px auto;
+padding:14px;
+width:260px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.calculator button{
+padding:14px 28px;
+background:#2f6fed;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
 
 /* ============================= */
 /* MOBILE RESPONSIVE OPTIMIZATION */
