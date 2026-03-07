@@ -78,3 +78,35 @@ document.getElementById("themeToggle").onclick=function(){
 document.body.classList.toggle("dark-mode");
 
 }
+/* LOAN ELIGIBILITY CHECKER */
+
+function checkEligibility(){
+
+let salary=document.getElementById("salary").value;
+let emi=document.getElementById("existingEMI").value;
+let tenure=document.getElementById("tenure").value;
+
+let disposable=salary*0.5-emi;
+
+let eligibleLoan=disposable*tenure;
+
+document.getElementById("eligibilityResult").innerHTML=
+"Estimated Eligible Loan Amount: ₹"+eligibleLoan.toFixed(0);
+
+}
+
+
+/* EMI CALCULATOR */
+
+function calculateEMI(){
+
+let P=document.getElementById("loanAmount").value;
+let R=document.getElementById("interestRate").value/12/100;
+let N=document.getElementById("loanTenure").value;
+
+let EMI=P*R*Math.pow((1+R),N)/(Math.pow((1+R),N)-1);
+
+document.getElementById("emiResult").innerHTML=
+"Monthly EMI: ₹"+EMI.toFixed(2);
+
+}
