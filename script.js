@@ -15,3 +15,66 @@ behavior:'smooth'
 });
 
 });
+
+
+/* COUNTER */
+
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute('data-target');
+const count=+counter.innerText;
+
+const speed=50;
+const increment=target/speed;
+
+if(count<target){
+
+counter.innerText=Math.ceil(count+increment);
+
+setTimeout(update,40);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+
+/* TESTIMONIAL SLIDER */
+
+let index=0;
+
+setInterval(()=>{
+
+let testimonials=document.querySelectorAll(".testimonial");
+
+testimonials.forEach(t=>t.classList.remove("active"));
+
+index++;
+
+if(index>=testimonials.length){
+index=0;
+}
+
+testimonials[index].classList.add("active");
+
+},4000);
+
+
+/* DARK MODE */
+
+document.getElementById("themeToggle").onclick=function(){
+
+document.body.classList.toggle("dark-mode");
+
+}
