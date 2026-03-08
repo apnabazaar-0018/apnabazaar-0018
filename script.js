@@ -186,7 +186,7 @@ formData.append("loanType", this[3].value);
 formData.append("loanAmount", this[4].value);
 formData.append("income", this[5].value);
 
-fetch("PASTE_SCRIPT_URL_HERE", {
+fetch("https://script.google.com/macros/s/AKfycbyV59pK-orfH4lSf3RNkiMt1lyy8Yeggz9aKq5klQzcEKlCstfCr0wjjsGDT5s7S9fh/exec", {
 
 method: "POST",
 body: formData
