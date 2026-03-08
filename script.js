@@ -126,12 +126,56 @@ document.getElementById("loanModal").style.display="none";
 
 /* FORM SUBMIT */
 
-document.getElementById("loanForm").addEventListener("submit",function(e){
+document.getElementById("loanForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-alert("Thank you! Our team will contact you shortly.");
+let name = this[0].value;
+let mobile = this[1].value;
+let city = this[2].value;
+let loanType = this[3].value;
+let loanAmount = this[4].value;
+let income = this[5].value;
 
-document.getElementById("loanModal").style.display="none";
+/* WhatsApp message */
+
+let whatsappMessage =
+"New Loan Application - RK Capital%0A%0A"+
+"Name: "+name+"%0A"+
+"Mobile: "+mobile+"%0A"+
+"City: "+city+"%0A"+
+"Loan Type: "+loanType+"%0A"+
+"Loan Amount: ₹"+loanAmount+"%0A"+
+"Monthly Income: ₹"+income;
+
+/* WhatsApp number */
+
+let whatsappURL =
+"https://wa.me/919730572143?text="+whatsappMessage;
+
+
+/* Email */
+
+let emailSubject = "New Loan Application - RK Capital";
+
+let emailBody =
+"Name: "+name+"%0A"+
+"Mobile: "+mobile+"%0A"+
+"City: "+city+"%0A"+
+"Loan Type: "+loanType+"%0A"+
+"Loan Amount: ₹"+loanAmount+"%0A"+
+"Monthly Income: ₹"+income;
+
+let emailURL =
+"mailto:rkcapitalfs@gmail.com?subject="+emailSubject+"&body="+emailBody;
+
+
+/* Open WhatsApp */
+
+window.open(whatsappURL,"_blank");
+
+/* Open Email */
+
+window.location.href = emailURL;
 
 });
