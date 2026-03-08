@@ -58,7 +58,7 @@ Financial & Loan Consultancy Services
 Helping individuals and businesses secure the best financial solutions.
 </p>
 
-<button onclick="applyLoan()" class="primary-btn">
+<button onclick="openLoanForm()" class="primary-btn">
 Apply for Loan
 </button>
 
@@ -420,6 +420,49 @@ Amravati | Akola | Washim | Yavatmal | Buldhana | Wardha | Nagpur
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- LOAN APPLICATION MODAL -->
+
+<div id="loanModal" class="loan-modal">
+
+<div class="loan-modal-content">
+
+<span class="close-modal" onclick="closeLoanForm()">&times;</span>
+
+<h2>Loan Application Form</h2>
+
+<form id="loanForm">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="tel" placeholder="Mobile Number" required>
+
+<input type="text" placeholder="City" required>
+
+<select required>
+
+<option value="">Select Loan Type</option>
+<option>Personal Loan</option>
+<option>Business Loan</option>
+<option>Home Loan</option>
+<option>Loan Against Property</option>
+<option>Loan Against Security</option>
+<option>Car Loan</option>
+ <option>Gold Loan</option> 
+
+  
+</select>
+
+<input type="number" placeholder="Loan Amount (₹)" required>
+
+<input type="number" placeholder="Monthly Income (₹)" required>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</div>  
 <script src="script.js"></script>
 
 </body>
