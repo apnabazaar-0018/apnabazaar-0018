@@ -78,6 +78,8 @@ document.getElementById("themeToggle").onclick=function(){
 document.body.classList.toggle("dark-mode");
 
 }
+
+
 /* LOAN ELIGIBILITY CHECKER */
 
 function checkEligibility(){
@@ -118,24 +120,28 @@ function openLoanForm(){
 document.getElementById("loanModal").style.display="flex";
 }
 
+
 /* FORM SUBMIT */
 
 document.addEventListener("DOMContentLoaded", function(){
 
 const form = document.getElementById("loanForm");
 
+if(!form) return;
+
 form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-/* Get form values */
+/* Get form values safely */
 
-let name = form.querySelectorAll("input")[0].value;
-let mobile = form.querySelectorAll("input")[1].value;
-let city = form.querySelectorAll("input")[2].value;
+let name = form.querySelector('input[placeholder="Full Name"]').value;
+let mobile = form.querySelector('input[placeholder="Mobile Number"]').value;
+let city = form.querySelector('input[placeholder="City"]').value;
 let loanType = form.querySelector("select").value;
-let loanAmount = form.querySelectorAll("input")[3].value;
-let income = form.querySelectorAll("input")[4].value;
+let loanAmount = form.querySelector('input[placeholder="Loan Amount (₹)"]').value;
+let income = form.querySelector('input[placeholder="Monthly Income (₹)"]').value;
+
 
 /* WhatsApp message */
 
@@ -148,38 +154,45 @@ let message =
 "Loan Amount: ₹"+loanAmount+"\n"+
 "Monthly Income: ₹"+income;
 
+
 /* Encode message */
 
 let encodedMessage = encodeURIComponent(message);
 
-/* Replace with your WhatsApp number */
+
+/* WhatsApp number */
 
 let whatsappNumber = "919730572143";
+
 
 /* WhatsApp URL */
 
 let whatsappURL =
 "https://wa.me/"+whatsappNumber+"?text="+encodedMessage;
 
-/* Email URL */
+
+/* Email */
 
 let emailURL =
 "mailto:rkcapitalfs@gmail.com"+
 "?subject=New Loan Application - RK Capital"+
 "&body="+encodedMessage;
 
+
 /* Open WhatsApp */
 
 window.open(whatsappURL,"_blank");
 
+
 /* Open Email */
 
-window.location.href = emailURL;
+setTimeout(function(){
+window.location.href=emailURL;
+},500);
 
 });
 
 });
-
 
 
 /* CLOSE FORM */
@@ -187,4 +200,3 @@ window.location.href = emailURL;
 function closeLoanForm(){
 document.getElementById("loanModal").style.display="none";
 }
-
