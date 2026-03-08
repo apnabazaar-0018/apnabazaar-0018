@@ -118,57 +118,55 @@ function openLoanForm(){
 document.getElementById("loanModal").style.display="flex";
 }
 
-/* CLOSE FORM */
-
-function closeLoanForm(){
-document.getElementById("loanModal").style.display="none";
-}
-
 /* FORM SUBMIT */
 
-document.getElementById("loanForm").addEventListener("submit", function(e){
+document.addEventListener("DOMContentLoaded", function(){
+
+const form = document.getElementById("loanForm");
+
+form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-let name = this[0].value;
-let mobile = this[1].value;
-let city = this[2].value;
-let loanType = this[3].value;
-let loanAmount = this[4].value;
-let income = this[5].value;
+/* Get form values */
+
+let name = form.querySelectorAll("input")[0].value;
+let mobile = form.querySelectorAll("input")[1].value;
+let city = form.querySelectorAll("input")[2].value;
+let loanType = form.querySelector("select").value;
+let loanAmount = form.querySelectorAll("input")[3].value;
+let income = form.querySelectorAll("input")[4].value;
 
 /* WhatsApp message */
 
-let whatsappMessage =
-"New Loan Application - RK Capital%0A%0A"+
-"Name: "+name+"%0A"+
-"Mobile: "+mobile+"%0A"+
-"City: "+city+"%0A"+
-"Loan Type: "+loanType+"%0A"+
-"Loan Amount: ₹"+loanAmount+"%0A"+
+let message =
+"New Loan Application - RK Capital\n\n"+
+"Name: "+name+"\n"+
+"Mobile: "+mobile+"\n"+
+"City: "+city+"\n"+
+"Loan Type: "+loanType+"\n"+
+"Loan Amount: ₹"+loanAmount+"\n"+
 "Monthly Income: ₹"+income;
 
-/* WhatsApp number */
+/* Encode message */
+
+let encodedMessage = encodeURIComponent(message);
+
+/* Replace with your WhatsApp number */
+
+let whatsappNumber = "919730572143";
+
+/* WhatsApp URL */
 
 let whatsappURL =
-"https://wa.me/919730572143?text="+whatsappMessage;
+"https://wa.me/"+whatsappNumber+"?text="+encodedMessage;
 
-
-/* Email */
-
-let emailSubject = "New Loan Application - RK Capital";
-
-let emailBody =
-"Name: "+name+"%0A"+
-"Mobile: "+mobile+"%0A"+
-"City: "+city+"%0A"+
-"Loan Type: "+loanType+"%0A"+
-"Loan Amount: ₹"+loanAmount+"%0A"+
-"Monthly Income: ₹"+income;
+/* Email URL */
 
 let emailURL =
-"mailto:rkcapitalfs@gmail.com?subject="+emailSubject+"&body="+emailBody;
-
+"mailto:rkcapitalfs@gmail.com"+
+"?subject=New Loan Application - RK Capital"+
+"&body="+encodedMessage;
 
 /* Open WhatsApp */
 
@@ -179,3 +177,14 @@ window.open(whatsappURL,"_blank");
 window.location.href = emailURL;
 
 });
+
+});
+
+
+
+/* CLOSE FORM */
+
+function closeLoanForm(){
+document.getElementById("loanModal").style.display="none";
+}
+
