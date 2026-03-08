@@ -111,27 +111,38 @@ document.getElementById("emiResult").innerHTML=
 
 }
 
-
-/* OPEN FORM */
-
-function openLoanForm(){
-document.getElementById("loanModal").style.display="flex";
-}
-
-/* CLOSE FORM */
-
-function closeLoanForm(){
-document.getElementById("loanModal").style.display="none";
-}
-
-/* FORM SUBMIT */
-
-document.getElementById("loanForm").addEventListener("submit",function(e){
+document.getElementById("loanForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-alert("Thank you! Our team will contact you shortly.");
+let formData = {
+
+name: this[0].value,
+mobile: this[1].value,
+city: this[2].value,
+loanType: this[3].value,
+loanAmount: this[4].value,
+income: this[5].value
+
+};
+
+fetch(" https://script.google.com/macros/s/AKfycbyfmep4kNEoqrttsNq8kYvnGyF5RGN1bGm5DJKiMyzAYBlPTLZFaH7e8cVm-HbiEVM/exec",{
+
+method: "POST",
+body: JSON.stringify(formData)
+
+})
+
+.then(res => res.text())
+
+.then(data => {
+
+alert("Application submitted successfully!");
 
 document.getElementById("loanModal").style.display="none";
+
+});
+
+});
 
 });
