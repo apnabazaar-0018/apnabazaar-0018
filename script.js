@@ -111,6 +111,21 @@ document.getElementById("emiResult").innerHTML=
 
 }
 
+
+/* OPEN FORM */
+
+function openLoanForm(){
+document.getElementById("loanModal").style.display="flex";
+}
+
+/* CLOSE FORM */
+
+function closeLoanForm(){
+document.getElementById("loanModal").style.display="none";
+}
+
+/* FORM SUBMIT - SEND DATA TO GOOGLE SHEETS */
+
 document.getElementById("loanForm").addEventListener("submit", function(e){
 
 e.preventDefault();
@@ -126,18 +141,19 @@ income: this[5].value
 
 };
 
-fetch(" https://script.google.com/macros/s/AKfycbyfmep4kNEoqrttsNq8kYvnGyF5RGN1bGm5DJKiMyzAYBlPTLZFaH7e8cVm-HbiEVM/exec",{
+fetch("https://script.google.com/macros/s/AKfycbyfmep4kNEoqrttsNq8kYvnGyF5RGN1bGm5DJKiMyzAYBlPTLZFaH7e8cVm-HbiEVM/exec",{
 
-method: "POST",
-body: JSON.stringify(formData)
+method:"POST",
+
+body:JSON.stringify(formData)
 
 })
 
-.then(res => res.text())
+.then(res=>res.text())
 
-.then(data => {
+.then(data=>{
 
-alert("Application submitted successfully!");
+alert("Application submitted successfully! Our team will contact you soon.");
 
 document.getElementById("loanModal").style.display="none";
 
@@ -145,4 +161,4 @@ document.getElementById("loanModal").style.display="none";
 
 });
 
-});
+
