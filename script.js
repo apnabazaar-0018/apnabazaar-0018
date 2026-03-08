@@ -173,3 +173,46 @@ window.location.href =
 function closeLoanForm(){
 document.getElementById("loanModal").style.display="none";
 }
+/* LOAN FORM SUBMIT */
+
+function sendLoanApplication(e){
+
+e.preventDefault();
+
+const form = document.getElementById("loanForm");
+
+let name = form.querySelector('input[name="name"]').value;
+let mobile = form.querySelector('input[name="mobile"]').value;
+let city = form.querySelector('input[name="city"]').value;
+let loanType = form.querySelector('select[name="loanType"]').value;
+let loanAmount = form.querySelector('input[name="loanAmount"]').value;
+let income = form.querySelector('input[name="income"]').value;
+
+let message =
+"New Loan Application - RK Capital\n\n"+
+"Name: "+name+"\n"+
+"Mobile: "+mobile+"\n"+
+"City: "+city+"\n"+
+"Loan Type: "+loanType+"\n"+
+"Loan Amount: ₹"+loanAmount+"\n"+
+"Monthly Income: ₹"+income;
+
+let encoded = encodeURIComponent(message);
+
+/* WhatsApp */
+
+window.open(
+"https://wa.me/919730572143?text="+encoded,
+"_blank"
+);
+
+/* Email */
+
+setTimeout(function(){
+
+window.location.href =
+"mailto:rkcapitalfs@gmail.com?subject=Loan Application&body="+encoded;
+
+},500);
+
+}
