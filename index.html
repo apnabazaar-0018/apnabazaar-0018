@@ -432,13 +432,13 @@ Amravati | Akola | Washim | Yavatmal | Buldhana | Wardha | Nagpur
 
 <form id="loanForm">
 
-<input type="text" placeholder="Full Name" required>
+<input type="text" name="name" placeholder="Full Name" required>
 
-<input type="tel" placeholder="Mobile Number" required>
+<input type="tel" name="mobile" placeholder="Mobile Number" required>
 
-<input type="text" placeholder="City" required>
+<input type="text" name="city" placeholder="City" required>
 
-<select required>
+<select name="loanType" required>
 
 <option value="">Select Loan Type</option>
 <option>Personal Loan</option>
@@ -447,14 +447,13 @@ Amravati | Akola | Washim | Yavatmal | Buldhana | Wardha | Nagpur
 <option>Loan Against Property</option>
 <option>Loan Against Security</option>
 <option>Car Loan</option>
- <option>Gold Loan</option> 
+<option>Gold Loan</option>
 
-  
 </select>
 
-<input type="number" placeholder="Loan Amount (₹)" required>
+<input type="number" name="loanAmount" placeholder="Loan Amount (₹)" required>
 
-<input type="number" placeholder="Monthly Income (₹)" required>
+<input type="number" name="income" placeholder="Monthly Income (₹)" required>
 
 <button type="submit">Submit Application</button>
 
