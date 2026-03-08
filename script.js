@@ -120,7 +120,6 @@ function openLoanForm(){
 document.getElementById("loanModal").style.display="flex";
 }
 
-
 /* FORM SUBMIT */
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -133,17 +132,12 @@ form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-/* Get form values safely */
-
-let name = form.querySelector('input[placeholder="Full Name"]').value;
-let mobile = form.querySelector('input[placeholder="Mobile Number"]').value;
-let city = form.querySelector('input[placeholder="City"]').value;
-let loanType = form.querySelector("select").value;
-let loanAmount = form.querySelector('input[placeholder="Loan Amount (₹)"]').value;
-let income = form.querySelector('input[placeholder="Monthly Income (₹)"]').value;
-
-
-/* WhatsApp message */
+let name = form.name.value;
+let mobile = form.mobile.value;
+let city = form.city.value;
+let loanType = form.loanType.value;
+let loanAmount = form.loanAmount.value;
+let income = form.income.value;
 
 let message =
 "New Loan Application - RK Capital\n\n"+
@@ -154,45 +148,24 @@ let message =
 "Loan Amount: ₹"+loanAmount+"\n"+
 "Monthly Income: ₹"+income;
 
+let encoded = encodeURIComponent(message);
 
-/* Encode message */
+/* WhatsApp */
 
-let encodedMessage = encodeURIComponent(message);
-
-
-/* WhatsApp number */
-
-let whatsappNumber = "919730572143";
-
-
-/* WhatsApp URL */
-
-let whatsappURL =
-"https://wa.me/"+whatsappNumber+"?text="+encodedMessage;
-
+window.open(
+"https://wa.me/919730572143?text="+encoded,
+"_blank"
+);
 
 /* Email */
 
-let emailURL =
-"mailto:rkcapitalfs@gmail.com"+
-"?subject=New Loan Application - RK Capital"+
-"&body="+encodedMessage;
-
-
-/* Open WhatsApp */
-
-window.open(whatsappURL,"_blank");
-
-
-/* Open Email */
-
-setTimeout(function(){
-window.location.href=emailURL;
-},500);
+window.location.href =
+"mailto:rkcapitalfs@gmail.com?subject=Loan Application&body="+encoded;
 
 });
 
 });
+
 
 
 /* CLOSE FORM */
