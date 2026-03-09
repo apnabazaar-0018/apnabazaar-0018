@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RK Capital Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>RK Capital Dashboard</h1>
+
+<p id="role"></p>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+
+let role=localStorage.getItem("role");
+
+if(!role){
+window.location.href="login.html";
+}
+
+document.getElementById("role").innerText="Logged in as: "+role;
+
+function logout(){
+
+localStorage.removeItem("role");
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
