@@ -1,3 +1,4 @@
+
 function applyLoan(){
 alert("Loan Application feature coming soon!");
 }
@@ -173,32 +174,46 @@ window.location.href =
 function closeLoanForm(){
 document.getElementById("loanModal").style.display="none";
 }
-document.getElementById("loanForm").addEventListener("submit", function(e){
+/* LOAN FORM SUBMIT */
+
+function sendLoanApplication(e){
 
 e.preventDefault();
 
-let formData = new FormData();
+const form = document.getElementById("loanForm");
 
-formData.append("name", this[0].value);
-formData.append("mobile", this[1].value);
-formData.append("city", this[2].value);
-formData.append("loanType", this[3].value);
-formData.append("loanAmount", this[4].value);
-formData.append("income", this[5].value);
+let name = form.querySelector('input[name="name"]').value;
+let mobile = form.querySelector('input[name="mobile"]').value;
+let city = form.querySelector('input[name="city"]').value;
+let loanType = form.querySelector('select[name="loanType"]').value;
+let loanAmount = form.querySelector('input[name="loanAmount"]').value;
+let income = form.querySelector('input[name="income"]').value;
 
-fetch("https://script.google.com/macros/s/AKfycbyV59pK-orfH4lSf3RNkiMt1lyy8Yeggz9aKq5klQzcEKlCstfCr0wjjsGDT5s7S9fh/exec", {
+let message =
+"New Loan Application - RK Capital\n\n"+
+"Name: "+name+"\n"+
+"Mobile: "+mobile+"\n"+
+"City: "+city+"\n"+
+"Loan Type: "+loanType+"\n"+
+"Loan Amount: ₹"+loanAmount+"\n"+
+"Monthly Income: ₹"+income;
 
-method: "POST",
-body: formData
+let encoded = encodeURIComponent(message);
 
-})
-.then(response => response.text())
-.then(data => {
+/* WhatsApp */
 
-alert("Application submitted successfully!");
+window.open(
+"https://wa.me/919730572143?text="+encoded,
+"_blank"
+);
 
-document.getElementById("loanModal").style.display="none";
+/* Email */
 
-});
+setTimeout(function(){
 
-});
+window.location.href =
+"mailto:rkcapitalfs@gmail.com?subject=Loan Application&body="+encoded;
+
+},500);
+
+}
