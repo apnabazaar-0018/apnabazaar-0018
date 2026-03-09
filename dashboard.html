@@ -109,7 +109,8 @@ border-radius:10px;
 <div class="dashboard-title">
 RK Capital Financial Services – Admin Panel
 </div>
-
+<div id="welcomeMessage" style="font-size:14px; opacity:0.8; margin-top:4px;"></div>
+  
 <button class="logout-btn" onclick="logout()">
 Logout
 </button>
@@ -159,6 +160,25 @@ src="https://docs.google.com/spreadsheets/d/1axji5a8szqGLk7X-nVnMpBaEF3n7I_Tv0-P
 /* ROLE CHECK */
 
 let role=localStorage.getItem("role");
+ /* WELCOME GREETING */
+
+let adminName = "Kautuk";
+
+let hour = new Date().getHours();
+let greeting = "";
+
+if(hour < 12){
+greeting = "Good Morning";
+}
+else if(hour < 18){
+greeting = "Good Afternoon";
+}
+else{
+greeting = "Good Evening";
+}
+
+document.getElementById("welcomeMessage").innerText =
+greeting + ", " + adminName + " 👋"; 
 
 if(!role){
 window.location.href="login.html";
