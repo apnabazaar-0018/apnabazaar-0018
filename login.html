@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,93 +19,34 @@ display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-background:linear-gradient(135deg,#0b1f3a,#2f6fed);
-overflow:hidden;
-font-family:'Inter',sans-serif;
+background:#f4f7fb;
 }
-
-/* ANIMATED FINTECH BACKGROUND */
-
-.fintech-bg{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-overflow:hidden;
-z-index:0;
-}
-
-.shape{
-position:absolute;
-border-radius:50%;
-background:rgba(255,255,255,0.08);
-animation:float 12s infinite ease-in-out;
-}
-
-.shape1{
-width:200px;
-height:200px;
-top:10%;
-left:10%;
-}
-
-.shape2{
-width:300px;
-height:300px;
-bottom:15%;
-right:10%;
-animation-delay:3s;
-}
-
-.shape3{
-width:150px;
-height:150px;
-top:40%;
-right:30%;
-animation-delay:6s;
-}
-
-@keyframes float{
-
-0%{transform:translateY(0px);}
-50%{transform:translateY(-30px);}
-100%{transform:translateY(0px);}
-
-}  
 
 .login-box{
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(12px);
+background:white;
 padding:40px;
-border-radius:15px;
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 width:320px;
 text-align:center;
-color:white;
-position:relative;
-z-index:1;
 }
 
 .login-box input{
 width:100%;
 padding:12px;
 margin:10px 0;
-border:none;
-border-radius:8px;
-outline:none;
+border:1px solid #ddd;
+border-radius:5px;
 }
 
 .login-box button{
 width:100%;
 padding:12px;
-background:white;
-color:#2f6fed;
+background:#2f6fed;
+color:white;
 border:none;
-border-radius:8px;
+border-radius:5px;
 cursor:pointer;
-font-weight:600;
-margin-top:10px;
 }
 
 .back-btn{
@@ -121,14 +63,6 @@ font-size:14px;
 
 <body>
 
-<div class="fintech-bg">
-
-<div class="shape shape1"></div>
-<div class="shape shape2"></div>
-<div class="shape shape3"></div>
-
-</div>
-  
 <div class="login-box">
 
 <h2>RK Capital Login</h2>
@@ -151,46 +85,39 @@ function login(){
 let username=document.getElementById("username").value;
 let password=document.getElementById("password").value;
 
-/* ADMIN LOGIN */
+/* Admin */
 
 if(username==="admin" && password==="kautuk123"){
 
 localStorage.setItem("role","admin");
-localStorage.setItem("name","Admin");
-
 window.location.href="dashboard.html";
 
 }
 
-/* EMPLOYEE 1 */
+/* Employee */
 
 else if(username==="pavan" && password==="pavan123"){
 
-localStorage.setItem("role","employee");
-localStorage.setItem("name","Pavan");
-
+localStorage.setItem("role","pavan");
 window.location.href="dashboard.html";
 
 }
-
-/* EMPLOYEE 2 */
-
 else if(username==="monukumar" && password==="monu123"){
 
-localStorage.setItem("role","employee");
-localStorage.setItem("name","monukumar");
-
+localStorage.setItem("role","monukumar");
 window.location.href="dashboard.html";
 
 }
-
+  
+  
 else{
 
-alert("Invalid Login Credentials");
+document.getElementById("error").innerText="Invalid login";
 
 }
 
 }
+
 </script>
 
 </body>
