@@ -90,6 +90,7 @@ let password=document.getElementById("password").value;
 if(username==="admin" && password==="kautuk123"){
 
 localStorage.setItem("role","admin");
+localStorage.setItem("name","Kautuk");  
 window.location.href="dashboard.html";
 
 }
@@ -98,13 +99,15 @@ window.location.href="dashboard.html";
 
 else if(username==="pavan" && password==="pavan123"){
 
-localStorage.setItem("role","pavan");
+localStorage.setItem("role","employee");
+localStorage.setItem("name","Pavan");  
 window.location.href="dashboard.html";
 
 }
 else if(username==="monukumar" && password==="monu123"){
 
-localStorage.setItem("role","monukumar");
+localStorage.setItem("role","employee");
+localStorage.setItem("name","Monukumar");  
 window.location.href="dashboard.html";
 
 }
