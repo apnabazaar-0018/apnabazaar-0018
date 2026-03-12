@@ -1020,6 +1020,76 @@ letter-spacing:0.5px;
 
 /* HEADER */
 
+/* MOBILE HEADER FIX */
+
+header{
+
+padding:10px 15px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+height:65px;
+
+}
+
+/* LOGO AREA */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+}
+
+/* LOGO IMAGE */
+
+.logo img{
+
+height:45px;
+
+width:auto;
+
+}
+
+/* COMPANY NAME */
+
+.company-name{
+
+font-size:16px;
+
+font-weight:700;
+
+margin-left:8px;
+
+white-space:nowrap;
+
+}
+
+.company-name{
+
+overflow:hidden;
+
+text-overflow:ellipsis;
+
+max-width:160px;
+
+}
+  
+/* HAMBURGER ICON */
+
+.menu-toggle{
+
+font-size:24px;
+
+cursor:pointer;
+
+}
+  
 header{
 padding:15px 20px;
 flex-direction:column;
