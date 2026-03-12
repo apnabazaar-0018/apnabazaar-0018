@@ -31,7 +31,7 @@ position:sticky;
 top:0;
 z-index:100;
 
-height:70px;
+height:73px;
 
 }
 
@@ -42,10 +42,25 @@ align-items:center;
 height:100%;
 
 }
+.company-name{
+
+font-size:24px;
+
+font-weight:700;
+
+margin-left:12px;
+
+background:linear-gradient(90deg,#ffffff,#00c2a8);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
 
 .logo img{
 
-height:80px;
+height:77px;
 
 width:auto;
 
@@ -978,6 +993,22 @@ display:block;
 background:#2f6fed;
 
 border-radius:6px;
+
+}
+
+/* COMPANY NAME NEXT TO LOGO */
+
+.company-name{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#ffffff;
+
+margin-left:12px;
+
+letter-spacing:0.5px;
 
 }
 
