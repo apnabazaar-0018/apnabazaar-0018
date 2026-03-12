@@ -45,7 +45,7 @@ height:100%;
 
 .logo img{
 
-height:200px;
+height:100px;
 
 width:auto;
 
@@ -900,6 +900,84 @@ font-size:18px;
 font-weight:600;
 
 color:#2f6fed;
+
+}
+
+/* HAMBURGER MENU */
+
+.menu-toggle{
+
+font-size:26px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* NAV MENU */
+
+#navMenu{
+
+position:absolute;
+
+top:70px;
+
+right:20px;
+
+background:#0b1f3a;
+
+border-radius:10px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+
+display:none;
+
+width:220px;
+
+}
+
+/* MENU LIST */
+
+#navMenu ul{
+
+list-style:none;
+
+padding:15px;
+
+}
+
+/* MENU ITEMS */
+
+#navMenu ul li{
+
+padding:12px 10px;
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+}
+
+/* LINKS */
+
+#navMenu ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+display:block;
+
+}
+
+/* HOVER EFFECT */
+
+#navMenu ul li:hover{
+
+background:#2f6fed;
+
+border-radius:6px;
 
 }
 
