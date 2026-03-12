@@ -28,12 +28,36 @@ z-index:100;
 }
 
 .logo{
-font-size:22px;
-font-weight:700;
-color:#0b1f3a;
-letter-spacing:0.5px;
+
+display:flex;
+
+align-items:center;
+
 }
 
+.logo img{
+
+height:45px;
+
+width:auto;
+
+}
+
+.logo img{
+
+height:45px;
+
+width:auto;
+
+transition:0.3s;
+
+}
+
+.logo img:hover{
+
+transform:scale(1.05);
+
+}
 nav ul{
 display:flex;
 gap:40px;
