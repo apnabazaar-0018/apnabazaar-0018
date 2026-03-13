@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -16,64 +17,22 @@ color:#1b2a4e;
 /* HEADER */
 
 header{
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-padding:12px 80px;
-
-background:#0b1f3a;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-
+padding:18px 80px;
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
 z-index:100;
-
-height:73px;
-
 }
 
 .logo{
-
-display:flex;
-align-items:center;
-height:100%;
-
-}
-.company-name{
-
-font-size:24px;
-
+font-size:22px;
 font-weight:700;
-
-margin-left:12px;
-
-background:linear-gradient(90deg,#ffffff,#00c2a8);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-}
-
-.logo img{
-
-height:77px;
-
-width:auto;
-
-object-fit:contain;
-
-}
-
-.logo img{
-
-transform:scale(1.1);
-
-}
-
+color:#0b1f3a;
+letter-spacing:0.5px;
 }
 
 nav ul{
@@ -85,7 +44,7 @@ list-style:none;
 nav a{
 text-decoration:none;
 font-weight:500;
-color:white;
+color:#333;
 position:relative;
 }
 
@@ -96,7 +55,7 @@ left:0;
 bottom:-6px;
 width:0;
 height:2px;
-background:#00c2a8;
+background:#2f6fed;
 transition:0.3s;
 }
 
@@ -918,100 +877,6 @@ color:#2f6fed;
 
 }
 
-/* HAMBURGER MENU */
-
-.menu-toggle{
-
-font-size:26px;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-/* NAV MENU */
-
-#navMenu{
-
-position:absolute;
-
-top:70px;
-
-right:20px;
-
-background:#0b1f3a;
-
-border-radius:10px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-
-display:none;
-
-width:220px;
-
-}
-
-/* MENU LIST */
-
-#navMenu ul{
-
-list-style:none;
-
-padding:15px;
-
-}
-
-/* MENU ITEMS */
-
-#navMenu ul li{
-
-padding:12px 10px;
-
-border-bottom:1px solid rgba(255,255,255,0.1);
-
-}
-
-/* LINKS */
-
-#navMenu ul li a{
-
-color:white;
-
-text-decoration:none;
-
-font-weight:500;
-
-display:block;
-
-}
-
-/* HOVER EFFECT */
-
-#navMenu ul li:hover{
-
-background:#2f6fed;
-
-border-radius:6px;
-
-}
-
-/* COMPANY NAME NEXT TO LOGO */
-
-.company-name{
-
-font-size:24px;
-
-font-weight:700;
-
-color:#ffffff;
-
-margin-left:12px;
-
-letter-spacing:0.5px;
-
-}
-
 /* ============================= */
 /* MOBILE RESPONSIVE OPTIMIZATION */
 /* ============================= */
@@ -1020,76 +885,6 @@ letter-spacing:0.5px;
 
 /* HEADER */
 
-/* MOBILE HEADER FIX */
-
-header{
-
-padding:10px 15px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-height:65px;
-
-}
-
-/* LOGO AREA */
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-}
-
-/* LOGO IMAGE */
-
-.logo img{
-
-height:45px;
-
-width:auto;
-
-}
-
-/* COMPANY NAME */
-
-.company-name{
-
-font-size:16px;
-
-font-weight:700;
-
-margin-left:8px;
-
-white-space:nowrap;
-
-}
-
-.company-name{
-
-overflow:hidden;
-
-text-overflow:ellipsis;
-
-max-width:160px;
-
-}
-  
-/* HAMBURGER ICON */
-
-.menu-toggle{
-
-font-size:24px;
-
-cursor:pointer;
-
-}
-  
 header{
 padding:15px 20px;
 flex-direction:column;
